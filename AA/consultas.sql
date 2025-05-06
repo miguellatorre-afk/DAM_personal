@@ -12,6 +12,14 @@ COMMIT;
 
 --3. Crear una consulta que muestre un listado agrupado de toda o parte de la información almacenada. En la consulta deben aparecen un filtrado con la función de agregado utilizada.--
 
+SELECT VE.FE_INGRESO, SUM(FA.NHORAS)
+FROM FACTURA FA INNER JOIN VEHICULOS VE
+ON FA.MATRICULA=VE.MATRICULA
+GROUP BY VE.FE_INGRESO
+HAVING SUM(FA.NHORAS) < '2024-04-01';
+
 --4.Crear una consulta que muestre, mediante una combinación externa, un listado con toda la información de una tabla principal que no tenga información relacionada en una tabla secundaria.--
+
+
 
 --5. Crear una consulta que muestre un listado de registros que contengan una determinada cadena en un campo de tu elección --
