@@ -26,3 +26,6 @@ ON VE.MATRICULA=FA.MATRICULA
 WHERE FA.FE_PAGO IS NULL;
 
 --5. Crear una consulta que muestre un listado de registros que contengan una determinada cadena en un campo de tu elección --
+
+
+
