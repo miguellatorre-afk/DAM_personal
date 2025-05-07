@@ -20,7 +20,7 @@ HAVING VE.FE_INGRESO < TO_DATE('2024-04-01', 'YYYY-MM-DD');
 
 --4.Crear una consulta que muestre, mediante una combinación externa, un listado con toda la información de una tabla principal que no tenga información relacionada en una tabla secundaria.--
 --SELECCIONAR VEHICULOS CUYAS FACTURAS AUN NO HAN SIDO PAGADAS
-SELECT VE.*
+SELECT *
 FROM VEHICULOS VE LEFT JOIN FACTURA FA
 ON VE.MATRICULA=FA.MATRICULA
 WHERE FA.FE_PAGO IS NULL;
