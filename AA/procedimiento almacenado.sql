@@ -22,3 +22,24 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLCODE || ' : ' || SQLERRM);        
 
 END;
+/
+
+--2-Crea un procedimiento almacenado con parámetros de entrada y salida. Dicho procedimiento debe contener un cursor usado cuando se cumpla cierta condición en el
+--parámetro de entrada. El parámetro de salida deberá ser mostrado por pantalla en la llamada al procedimiento.
+
+CREATE OR REPLACE PROCEDURE COMPARATIVA(CITY IN VARCHAR(20) AS
+
+DECLARE
+CURSOR C1 IS SELECT NOMBRE, APELLIDOS FROM CLIENTES;
+    
+BEGIN
+
+OPEN C1
+IF 
+    
+END;
+
+
+
+
+    
