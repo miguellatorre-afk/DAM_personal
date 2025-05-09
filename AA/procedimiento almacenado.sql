@@ -23,9 +23,8 @@ END;
 --2-Crea un procedimiento almacenado con parámetros de entrada y salida. Dicho procedimiento debe contener un cursor usado cuando se cumpla cierta condición en el
 --parámetro de entrada. El parámetro de salida deberá ser mostrado por pantalla en la llamada al procedimiento.
 
-CREATE OR REPLACE PROCEDURE COMPROBAR(SEGURO IN VARCHAR2(1), INFO_VEHICULO OUT VARCHAR2) AS
+CREATE OR REPLACE PROCEDURE COMPROBAR(SEGURO IN , INFO_VEHICULO OUT VARCHAR2) AS
 
-DECLARE
 CURSOR C1 IS 
     SELECT MATRICULA, MARCA, MODELO 
     FROM VEHICULO
@@ -36,9 +35,9 @@ OU_MARCA VEHICULOS.MARCA;
 OU_MODELO VEHICULOS.MODELO;
 
 BEGIN
+IF
+    OPEN C1;
     
-OPEN C1;
-    IF 
 
 CLOSE C1;
 
