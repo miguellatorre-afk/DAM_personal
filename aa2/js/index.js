@@ -1,9 +1,10 @@
 
-let itemArray = [];
+
 const url_eldenringitems = 'https://eldenring.fanapis.com/api/items';
 
 tarjetasItems = () => {
     console.log('tarjetasItems function called');
+
     fetch(url_eldenringitems)
       .then(response =>{
         console.log('Response', response);
@@ -13,16 +14,18 @@ tarjetasItems = () => {
       })
       .then(data => {
         console.log('aqui esta la', data);
-        itemArray = data.data;
+        let itemArray = data.data;
+        pintarItems(itemArray);
+        console.log('itemArray', itemArray);
       })
       .catch(error => {
         console.error('Error fetching items:', error);
       });
+};
 
-    console.log('itemArray', itemArray);
-  };
+ 
 
-  pintarItems = (itemArray) => {
+pintarItems = (itemArray) => {
   console.log('pintarItems function called', itemArray);
   let wiki_article = document.getElementById('wiki-article');
   let listofitems = document.createElement('ul'); listofitems.classList.add('listofitems');
@@ -36,7 +39,7 @@ tarjetasItems = () => {
     `;
     listofitems.appendChild(listofitems_li);
   });
-}
+};
 
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM fully loaded and parsed');
