@@ -14,6 +14,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
+.listofitems p{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 500;
+    
+}
+
 .wiki-header {
     background-color: #3a3a3a; 
     color: #ffffff; 
@@ -106,7 +112,7 @@ ul {
 }
 
 #item-details p {
-    color: #cccccc; 
+    color: #8e8181; 
 }
 
 .wiki-sidebar {
@@ -149,7 +155,7 @@ a:hover {
 }
 
 li {
-  background: white;
+  background: rgb(123, 119, 119);
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 6px;

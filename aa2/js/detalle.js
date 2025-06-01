@@ -1,27 +1,43 @@
-const params = new URLSearchParams(window.location.search);
-const name = params.get('name');
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+  tarjetasItems();
+  let params= URLSearchParams(document.location.search)
+  let name= params.get('name');
+  
+});
 
-async function obtenerDetalle() {
-  const res = await fetch(`https://souls-api.p.rapidapi.com/characters/${name}`, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'TU_API_KEY',
-      'X-RapidAPI-Host': 'souls-api.p.rapidapi.com'
-    }
+tarjetasItems = () => {
+    console.log('tarjetasItems function called');
+    fetch(url_eldenringitems)
+      .then(response =>{
+        console.log('Response', response);
+        let info = response.json()
+        console.log('Info', info);
+        return info;
+      })
+      .then(data => {
+        console.log('aqui esta la', data);
+        let itemArray = data.data;
+        pintarItems(itemArray);
+        console.log('itemArray', itemArray);
+      })
+      .catch(error => {
+        console.error('Error fetching items:', error);
+      });
+};
+
+pintarItems = (itemArray) => {
+  console.log('pintarItems function called', itemArray);
+  let wiki_article = document.getElementById('wiki-article');
+  let listofitems = document.createElement('ul'); listofitems.classList.add('listofitems');
+  wiki_article.appendChild(listofitems);
+  itemArray.forEach((item) => {
+    let listofitems_li = document.createElement('li'); listofitems_li.classList.add('item');
+    listofitems_li.innerHTML = `
+      <h2>${item.name}</h2>
+      <p>${item.description}</p>
+      <img src="${item.image}" alt="${item.name}">
+    `;
+    listofitems.appendChild(listofitems_li);
   });
-  const data = await res.json();
-  mostrarDetalle(data);
-}
-
-function mostrarDetalle(p) {
-  document.getElementById('detalle').innerHTML = `
-    <h2>${p.name}</h2>
-    <p><strong>Género:</strong> ${p.gender}</p>
-    <p><strong>Nacionalidad:</strong> ${p.nationality}</p>
-    <p><strong>Facción:</strong> ${p.faction}</p>
-    <p><strong>Descripción:</strong> ${p.description}</p>
-    ${p.image_url ? `<img src="${p.image_url}" alt="${p.name}" width="200">` : ''}
-  `;
-}
-
-obtenerDetalle();
+};
