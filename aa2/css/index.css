@@ -20,6 +20,13 @@ body {
     
 }
 
+.listofitems h2 {
+  font-family: 'Cinzel', serif;
+  color: #afacac;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
 .wiki-header {
     background-color: #3a3a3a; 
     color: #ffffff; 
@@ -66,33 +73,33 @@ ul {
 .wiki-button{
     display: inline-block;
     padding: 12px 20px;
-    background-color: #4a4a4a; /* Dark grey background from the scheme */
-    color: #f0a040; /* Orange accent color for text */
-    border: 1px solid #5a5a5a; /* Border color from the scheme */
+    background-color: #4a4a4a; 
+    color: #f0a040; 
+    border: 1px solid #5a5a5a; 
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
     font-size: 16px;
     font-weight: bold;
-    /* Shadows for bevel and volume */
+   
     box-shadow:
-        inset 1px 1px 3px rgba(0, 0, 0, 0.5), /* Dark inset shadow for top-left bevel */
-        inset -1px -1px 3px rgba(255, 255, 255, 0.1), /* Light inset shadow for bottom-right bevel */
-        3px 3px 5px rgba(0, 0, 0, 0.5); /* Regular shadow for volume */
+        inset 1px 1px 3px rgba(0, 0, 0, 0.5), 
+        inset -1px -1px 3px rgba(255, 255, 255, 0.1), 
+        3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .wiki-button:hover {
-    background-color: #5a5a5a; /* Slightly lighter grey on hover */
+    background-color: #5a5a5a; 
     box-shadow:
         inset 1px 1px 3px rgba(0, 0, 0, 0.6),
         inset -1px -1px 3px rgba(255, 255, 255, 0.15),
-        4px 4px 7px rgba(0, 0, 0, 0.6); /* Slightly larger shadow on hover */
+        4px 4px 7px rgba(0, 0, 0, 0.6); 
 }
 
 .wiki-button:active {
-    background-color: #3a3a3a; /* Darker grey when active */
-    /* Inset shadows to simulate being pressed */
+    background-color: #3a3a3a; 
+    
     box-shadow:
         inset 2px 2px 5px rgba(0, 0, 0, 0.7),
         inset -2px -2px 5px rgba(255, 255, 255, 0.05);
@@ -123,7 +130,7 @@ ul {
 
 #item-list {
     padding: 10px;
-    background-color: #333; 
+    background-color: #666565; 
     border: 1px solid #4a4a4a;
 }
 
@@ -155,13 +162,66 @@ a:hover {
 }
 
 li {
-  background: rgb(123, 119, 119);
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 6px;
+  background: rgba(59, 59, 59, 0.7);
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+li:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(240,160,64,0.3);
+}
 
+.boss-image {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.boss-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: #a0844f 0px 0px 10px;
+        background: linear-gradient(135deg, #232323 60%, #3a2d1a 100%);
+    border-radius: 18px;
+    border: 4px double #f0a040;
+    box-shadow:
+        0 4px 16px #000a, /* sombra exterior */
+        0 1px 0 #fff4 inset, /* bisel claro arriba */
+        0 -2px 8px #a0844f88 inset; /* bisel dorado interior abajo */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.boss-image p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff3e0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000a;
+}
+
+.boss-image:hover {
+    box-shadow:
+        0 12px 36px #f0a04055,
+        0 2px 12px #000a;
+    transform: scale(1.03);
+}
+
+.small-image{
+    height: 180px;
+    width: 275px;
+}
+
+.small-image img{
+    height: 100%;
+    width: 100%;
+}
+    
 #item-list li:last-child {
     border-bottom: none; 
 }
@@ -171,7 +231,7 @@ li {
 }
 
 #item-list a {
-    color: #cccccc; 
+    color: #5c5c5c; 
     text-decoration: none; 
     display: block; 
 }
@@ -180,31 +240,18 @@ li {
     color: #ffffff; 
 }
 
-.wiki-footer {
-    background-color: #3a3a3a; 
-    color: #cccccc; 
-    padding: 15px;
-    text-align: center;
-    border-top: 2px solid #5a5a5a; 
-    font-size: 0.9em;
-}
-
-@media (max-width: 768px) {
-    .wiki-main-content {
-        flex-direction: column; 
-    }
-
-    .wiki-article {
-        padding-right: 0;
-        border-right: none;
-        padding-bottom: 20px; 
-        border-bottom: 1px solid #4a4a4a; 
-    }
-
-    .wiki-sidebar {
-        padding-left: 0;
-        padding-top: 20px; 
-    }
+.individual{
+    background-color: #222222; 
+    padding: 20px;
+    border-radius: 20px;
+    border-width: 10px;
+    border-style: groove;
+    border-color: #a0844f;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
 }
 
 .wiki-footer {
@@ -216,20 +263,55 @@ li {
     font-size: 0.9em;
 }
 
-@media (max-width: 768px) {
-    .wiki-main-content {
-        flex-direction: column; 
-    }
 
-    .wiki-article {
-        padding-right: 0;
-        border-right: none;
-        padding-bottom: 20px; 
-        border-bottom: 1px solid #4a4a4a; 
-    }
 
-    .wiki-sidebar {
-        padding-left: 0;
-        padding-top: 20px; 
-    }
+
+@media (max-width: 900px) {
+  .wiki-main-content {
+    flex-direction: column;
+    padding: 0 8px;
+  }
+  .wiki-article, .wiki-sidebar {
+    min-width: unset;
+    padding: 0;
+    border: none;
+  }
+  .wiki-article {
+    padding-right: 0;
+    border-right: none;
+  }
+  .wiki-sidebar {
+    padding-left: 0;
+  }
+  .boss-image {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+  .boss-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  li {
+    padding: 16px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .wiki-header h1 {
+    font-size: 1.5em;
+  }
+  .boss-image {
+    padding: 8px;
+    border-radius: 10px;
+  }
+  .listofitems h2 {
+    font-size: 1.1em;
+  }
+  .wiki-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }

@@ -4,26 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SOULS API</title>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
     <script src="./js/index2.js"></script>
+    <script src="./js/buscador.js"></script>
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
     <div class="wiki-container">
       <header class="wiki-header">
-        <h1>SOULSWIKI</h1>
+        <a href='file:///C:/Users/Usuario/Desktop/DAM/2EVAL/Lenguaje/aa2/index.html'><h1>SOULSWIKI</h1></a>
       </header>
       <div class="wiki-main-content">
         <div class="wiki-article" id='wiki-article'> 
           <!-- Article content goes here -->
           <input type="text" id="search" placeholder="Buscar item...">
+          <button onclick="buscarBoss()">Buscar</button>
+          <div id="result"></div>
           <br>
           </br>
-
-          <button id='item-collection' class="wiki-button">Colección de Items</button>
-          <button id='boss-collection' class="wiki-button" onclick="MostrarBoss()">Bosses</button>
-         
-
         </div>
       </div>
       <footer class="wiki-footer">

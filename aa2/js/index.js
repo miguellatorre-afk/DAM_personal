@@ -28,7 +28,7 @@ pintarItems = (itemArray) => {
   itemArray.forEach((item) => {
     let listofitems_li = document.createElement('li'); listofitems_li.classList.add('item');
     listofitems_li.innerHTML = `
-      <a href= 'detalle.html?name=$item.name'><h2>${item.name}</h2>
+      <a href= 'detalle.html?name=$item.name'><h2>${item.name}</h2></a>
       <p>${item.description}</p>
       <img src="${item.image}" alt="${item.name}">
     `;
